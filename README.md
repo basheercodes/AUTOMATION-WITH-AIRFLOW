@@ -1,4 +1,4 @@
-
+![image alt](https://github.com/basheercodes/AUTOMATION-WITH-AIRFLOW/blob/cf4e1afe429b54843e72129a333b148e63cdad8b/AUTOMATION%20DATA%20PIPELINE%20WITH%20AIRFLOW%20.png)
 Airflow × Snowflake × Docker Data Pipeline
 📖 Project Overview
 This project is a containerized, production‑ready data pipeline that integrates Apache Airflow with Snowflake Cloud Data Warehouse, orchestrated entirely through Docker. It automates incremental data loading into Snowflake, ensuring scalability, reproducibility, and maintainability.
