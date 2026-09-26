@@ -1,0 +1,37 @@
+USE DATABASE AIRFLOW_DB;
+use schema AIRFLOW_DB.BRONZE;
+
+CREATE OR REPLACE TABLE SALES_DATA(
+SALE_ID INT,
+PRODUCT_NAME STRING,
+QUANTITY INT,
+PRICE DECIMAL(10,2),
+SALE_DATA DATE,
+CUSTOMER_NAME STRING,
+REGION STRING,
+LAST_MODIFIED TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
+)
+
+INSERT INTO SALES_DATA (SALE_ID, PRODUCT_NAME, QUANTITY, PRICE, SALE_DATA, CUSTOMER_NAME, REGION)
+VALUES
+(1, 'Cosentyx 150mg Injection', 25, 1200.00, '2026-09-01', 'Apollo Hospitals', 'South'),
+(2, 'Entresto 100mg Tablets', 40, 950.00, '2026-09-02', 'Fortis Healthcare', 'North'),
+(3, 'Tasigna 200mg Capsules', 15, 1800.00, '2026-09-03', 'MedPlus Distributors', 'East'),
+(4, 'Jakavi 5mg Tablets', 30, 1100.00, '2026-09-04', 'Sunshine Clinic', 'West'),
+(5, 'Zolgensma Vial', 2, 2000000.00, '2026-09-05', 'AIIMS Hospital', 'North'),
+(6, 'Cosentyx 150mg Injection', 20, 1200.00, '2026-09-06', 'Apollo Hospitals', 'South'),
+(7, 'Entresto 100mg Tablets', 35, 950.00, '2026-09-07', 'Fortis Healthcare', 'North'),
+(8, 'Tasigna 200mg Capsules', 18, 1800.00, '2026-09-08', 'MedPlus Distributors', 'East'),
+(9, 'Jakavi 5mg Tablets', 28, 1100.00, '2026-09-09', 'Sunshine Clinic', 'West'),
+(10, 'Zolgensma Vial', 1, 2000000.00, '2026-09-10', 'AIIMS Hospital', 'North'),
+(11, 'Cosentyx 150mg Injection', 22, 1200.00, '2026-09-11', 'Apollo Hospitals', 'South'),
+(12, 'Entresto 100mg Tablets', 38, 950.00, '2026-09-12', 'Fortis Healthcare', 'North'),
+(13, 'Tasigna 200mg Capsules', 20, 1800.00, '2026-09-13', 'MedPlus Distributors', 'East'),
+(14, 'Jakavi 5mg Tablets', 32, 1100.00, '2026-09-14', 'Sunshine Clinic', 'West'),
+(15, 'Cosentyx 150mg Injection', 27, 1200.00, '2026-09-15', 'Apollo Hospitals', 'South'),
+(16, 'Entresto 100mg Tablets', 42, 950.00, '2026-09-16', 'Fortis Healthcare', 'North'),
+(17, 'Tasigna 200mg Capsules', 25, 1800.00, '2026-09-17', 'MedPlus Distributors', 'East'),
+(18, 'Jakavi 5mg Tablets', 29, 1100.00, '2026-09-18', 'Sunshine Clinic', 'West'),
+(19, 'Cosentyx 150mg Injection', 24, 1200.00, '2026-09-19', 'Apollo Hospitals', 'South'),
+(20, 'Entresto 100mg Tablets', 36, 950.00, '2026-09-20', 'Fortis Healthcare', 'North');
