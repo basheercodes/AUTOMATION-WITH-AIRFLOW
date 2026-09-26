@@ -1,0 +1,25 @@
+ CREATE OR REPLACE PROCEDURE INCREMENT_LOAD()
+ RETURNS STRING
+ LANGUAGE PYTHON 
+ RUNTIME_VERSION = '3.10'AIRFLOW_DB
+ PACKAGES = ('snowflake-snowpark-python')
+ HANDLER = 'run'
+ as
+ $$
+  def run (session) :
+      try :
+            session.sql("BEGIN").collect()
+            session.sql("""
+            insert into SALES_INCR
+            select * from AIRFLOW_DB.BRONZE
+            WHERE LAST_MODIFIED > (SELECT COALESCE (MAX(LAST_MODIFIED ),'1900-01-01') FROM SALES_INCR)
+            """).COLLECT()
+
+            SESSION.SQL("COMMIT").COLLECT()
+
+        EXCEPT EXCEPTION AS E:
+
+            SESSION.SQL("ROLLBACK").COLLECT()
+            RETURN F"INCREMENT LOAD FAILED : {STR(E)}"
+
+$$;
